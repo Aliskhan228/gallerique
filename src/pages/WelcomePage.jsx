@@ -10,7 +10,7 @@ const WelcomePage = () => {
         <Header />
         <h1 className="welcome-page__title">
           {" "}
-          Welcome to Snapshot, where your photo collection becomes a visual
+          Welcome to Gallerique, where your photo collection becomes a visual
           masterpiece!
         </h1>
         <p className="welcome-page__description">
@@ -37,7 +37,7 @@ const WelcomePage = () => {
                 <li className="key-features__list-item">
                   Smart Search: Instantly locate specific images with our
                   intelligent search feature. Whether it&apos;s a date,
-                  location, or a specific tag, Snapshot makes finding your
+                  location, or a specific tag, Gallerique makes finding your
                   cherished moments quick and hassle-free.
                 </li>
                 <li className="key-features__list-item">
@@ -54,7 +54,7 @@ const WelcomePage = () => {
                 </li>
                 <li className="key-features__list-item">
                   Rich Image Information: Get to know the story behind each
-                  photo. Snapshot provides detailed information, including date,
+                  photo. Gallerique provides detailed information, including date,
                   location, and any manually added captions. Rediscover the
                   context and emotions associated with your images.
                 </li>
