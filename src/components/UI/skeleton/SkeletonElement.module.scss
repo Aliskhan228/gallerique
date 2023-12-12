@@ -1,0 +1,16 @@
+.skeleton {
+  display: flex;
+  gap: 40px;
+	align-self: start;
+}
+
+.skeletonData {
+	display: flex;
+	flex-direction: column;
+  gap: 20px;
+}
+
+.skeletonTags {
+  display: flex;
+  gap: 5px;
+}

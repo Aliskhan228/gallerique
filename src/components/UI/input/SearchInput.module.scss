@@ -1,0 +1,11 @@
+.searchInput {
+  height: 40px;
+  width: 400px;
+	color: #000;
+	font-size: 16px;
+  border-radius: 8px 0 0 8px;
+
+	&::placeholder {
+		color: #000;
+	}
+}
