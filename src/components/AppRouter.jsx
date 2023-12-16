@@ -5,19 +5,20 @@ import ErrorPage from "./../pages/ErrorPage.jsx";
 import SearchPage from "./../pages/SearchPage.jsx";
 import Photos from "../pages/Photos.jsx";
 import Photo from "./../pages/Photo.jsx";
+import Contact from "../pages/Contact.jsx";
 
 const router = createBrowserRouter([
   {
-		path: '/',
-    element: <WelcomePage />,
-  },
-  {
-    path: "/gallery",
+    path: "/",
     element: <Home />,
     errorElement: <ErrorPage />,
     children: [
       {
         index: true,
+        element: <WelcomePage />,
+      },
+      {
+        path: "/gallery",
         element: <Photos />,
       },
       {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/gallery/search",
         element: <SearchPage />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },

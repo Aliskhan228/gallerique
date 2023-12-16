@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Loader from "../components/UI/loader/Loader";
 import GalleryItem from "../components/GalleryItem";
 import Masonry from "react-masonry-css";
-import { HomeContext, QueryContext } from "./Home";
+import { HomeContext } from "./Home";
 import PaginationComponent from "../components/UI/pagination/Pagination";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,10 +10,10 @@ import {
   getPhotosByQuery,
   selectSearchedPhotos,
 } from "../store/slices/photosSlice";
+import { Empty } from "antd";
 
 const SearchPage = () => {
-  const { query } = useContext(QueryContext);
-  const { limit, page, changePage, breakpointColumnsObj } =
+  const { limit, page, query, changePage, breakpointColumnsObj } =
     useContext(HomeContext);
 
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ const SearchPage = () => {
         </div>
       </div>
     ) : (
-      <div>Not found</div>
+      <Empty className="no-data" image={Empty.PRESENTED_IMAGE_SIMPLE} />
     );
   } else if (status === "failed") {
     content = <div>{error}</div>;

@@ -1,13 +1,17 @@
 import { Button } from "antd";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const WelcomePage = () => {
+  const featuresSection = useRef();
+
+  const handleScrollDownClick = () => {
+    featuresSection.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="welcome-page">
       <section className="welcome-page__main-block">
-        <Header />
         <h1 className="welcome-page__title">
           {" "}
           Welcome to Gallerique, where your photo collection becomes a visual
@@ -18,17 +22,22 @@ const WelcomePage = () => {
           ordinary, offering a range of features to enhance your photo browsing
           experience.
         </p>
-        <a href="#features">
-          <div className="arrow-container animated fadeInDown">
-            <div className="arrow-2">
-              <span className="material-symbols-outlined">expand_more</span>
-            </div>
-            <div className="arrow-1 animated hinge infinite zoomIn"></div>
+        <div
+          onClick={() => handleScrollDownClick()}
+          className="go-down-button arrow-container animated fadeInDown"
+        >
+          <div className="arrow-2">
+            <span className="material-symbols-outlined">expand_more</span>
           </div>
-        </a>
+          <div className="arrow-1 animated hinge infinite zoomIn"></div>
+        </div>
       </section>
 
-      <section id="features" className="welcome-page__features-block">
+      <section
+        ref={featuresSection}
+        id="features"
+        className="welcome-page__features-block"
+      >
         <div className="container">
           <div className="wrapper">
             <div className="key-features">
@@ -54,9 +63,9 @@ const WelcomePage = () => {
                 </li>
                 <li className="key-features__list-item">
                   Rich Image Information: Get to know the story behind each
-                  photo. Gallerique provides detailed information, including date,
-                  location, and any manually added captions. Rediscover the
-                  context and emotions associated with your images.
+                  photo. Gallerique provides detailed information, including
+                  date, location, and any manually added captions. Rediscover
+                  the context and emotions associated with your images.
                 </li>
               </ul>
               <div className="welcome-page__subtext">
@@ -74,7 +83,6 @@ const WelcomePage = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

@@ -1,16 +1,27 @@
 import Search from "antd/es/input/Search";
 import { useContext } from "react";
-import { HomeContext, QueryContext } from "../../../pages/Home";
+import { HomeContext } from "../../../pages/Home";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getPhotosByQuery } from "./../../../store/slices/photosSlice";
 
 const SearchForm = () => {
-  const { query, setQuery } = useContext(QueryContext);
-  const { handleOnSearchClick } = useContext(HomeContext);
+  const { limit, page, query, setQuery, setPage } = useContext(HomeContext);
+
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
+  const handleOnSearchClick = () => {
+    if (query === "") return;
+
+    navigate("/gallery/search");
+    dispatch(getPhotosByQuery({ limit, page, query }));
+    setPage(1);
+  };
+
   const handleOnClear = () => {
-		navigate('/gallery')
+    navigate("/gallery");
     setQuery("");
   };
 
@@ -19,7 +30,7 @@ const SearchForm = () => {
       <Search
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search"
+        placeholder="Search photos"
         onSearch={() => {
           handleOnSearchClick();
         }}

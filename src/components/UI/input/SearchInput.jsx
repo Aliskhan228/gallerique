@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import styles from "./SearchInput.module.scss";
 import { Input } from "antd";
-import { QueryContext } from './../../../pages/Home';
+import { HomeContext } from './../../../pages/Home';
 
 const SearchInput = () => {
-  const { query, setQuery } = useContext(QueryContext);
+  const { query, setQuery } = useContext(HomeContext);
 
   return (
     <Input

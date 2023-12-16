@@ -20,12 +20,12 @@ const Navbar = () => {
         Gallery
       </NavLink>
       <NavLink
-        to={"/contacts"}
+        to={"/contact"}
         className={({ isActive }) =>
           isActive ? "nav-link nav-link_active" : "nav-link"
         }
       >
-        Contacts
+        Contact
       </NavLink>
     </nav>
   );
