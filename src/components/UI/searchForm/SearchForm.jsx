@@ -2,7 +2,7 @@ import Search from "antd/es/input/Search";
 import { useContext } from "react";
 import { HomeContext } from "../../../pages/Home";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getPhotosByQuery } from "./../../../store/slices/photosSlice";
 
 const SearchForm = () => {
@@ -37,9 +37,6 @@ const SearchForm = () => {
         onPressEnter={(e) => {
           e.preventDefault();
           handleOnSearchClick();
-        }}
-        style={{
-          width: 400,
         }}
       />
       {query && (

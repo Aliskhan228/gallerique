@@ -12,24 +12,28 @@ const WelcomePage = () => {
   return (
     <div className="welcome-page">
       <section className="welcome-page__main-block">
-        <h1 className="welcome-page__title">
-          {" "}
-          Welcome to Gallerique, where your photo collection becomes a visual
-          masterpiece!
-        </h1>
-        <p className="welcome-page__description">
-          We&apos;ve crafted an exceptional gallery app that goes beyond the
-          ordinary, offering a range of features to enhance your photo browsing
-          experience.
-        </p>
-        <div
-          onClick={() => handleScrollDownClick()}
-          className="go-down-button arrow-container animated fadeInDown"
-        >
-          <div className="arrow-2">
-            <span className="material-symbols-outlined">expand_more</span>
+        <div className="container">
+          <div className="wrapper">
+            <h1 className="welcome-page__title">
+              {" "}
+              Welcome to Gallerique, where your photo collection becomes a
+              visual masterpiece!
+            </h1>
+            <p className="welcome-page__description">
+              We&apos;ve crafted an exceptional gallery app that goes beyond the
+              ordinary, offering a range of features to enhance your photo
+              browsing experience.
+            </p>
+            <div
+              onClick={() => handleScrollDownClick()}
+              className="go-down-button arrow-container animated fadeInDown"
+            >
+              <div className="arrow-2">
+                <span className="material-symbols-outlined">expand_more</span>
+              </div>
+              <div className="arrow-1 animated hinge infinite zoomIn"></div>
+            </div>
           </div>
-          <div className="arrow-1 animated hinge infinite zoomIn"></div>
         </div>
       </section>
 

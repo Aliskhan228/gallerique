@@ -25,7 +25,7 @@ const Photo = () => {
   } else if (status === "succeeded") {
     content = (
       <div className="photo-page-wrapper">
-        <div className="photo-page">
+        <div className="photo-page__content">
           <div className="photo-page-img">
             <img src={photo.urls?.small} alt="" />
           </div>
