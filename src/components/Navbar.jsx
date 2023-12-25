@@ -1,20 +1,10 @@
-import { CloseOutlined } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 
-const Navbar = ({ isNavOpend, setIsNavOpened }) => {
-  const handleOnCloseClick = (e) => {
-    e.stopPropagation();
-    setIsNavOpened(!isNavOpend);
-  };
+const Navbar = () => {
 
   return (
     <div className="nav-wrapper">
-      <div className="nav-overlay" onClick={(e) => handleOnCloseClick(e)}></div>
-      <nav className={isNavOpend ? "nav nav_opened" : "nav"}>
-        <CloseOutlined
-          onClick={(e) => handleOnCloseClick(e)}
-          className="nav__close-icon"
-        />
+      <nav className="nav">
         <NavLink
           to={"/"}
           className={({ isActive }) =>
