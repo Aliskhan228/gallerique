@@ -69,7 +69,7 @@ body {
       inset: 0;
       translate: -100% 0;
       transition: all 0.3s ease-in-out;
-			z-index: 1000;
+      z-index: 1000;
 
       .nav-wrapper {
         height: 100%;
@@ -463,9 +463,14 @@ body {
   gap: 40px;
   padding-top: 50px;
 
+  .photo-page__content {
+    display: flex;
+    gap: 50px;
+  }
+
   img {
     border-radius: 8px;
-    width: 100%;
+    // width: 100%;
   }
 
   .photo-datas {
@@ -765,8 +770,15 @@ body {
   .photo-page {
     flex-direction: column;
 
+    .photo-page__content {
+      flex-direction: column;
+    }
+
     .photo-page-img {
-      margin-bottom: 30px;
+
+      img {
+        width: 100%;
+      }
     }
   }
 
